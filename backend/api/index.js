@@ -24,7 +24,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
-
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 // api's
 app.use("/api/v1/user", userRoute);
