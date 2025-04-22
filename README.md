@@ -41,20 +41,6 @@ TalentTrek/
 └── .env            # Environment variables
 ```
 
----
-
-## 🔐 Environment Variables (.env)
-
-Here's a sample of the required `.env` file. _**Make sure not to expose secrets in public repos.**_
-
-```env
-MONGO_URI="mongodb+srv://<your-mongo-uri>"
-PORT=8000
-SECRET_KEY=shwhddwuihffnfueifgscjkhdjsfhhdfo
-CLOUD_NAME=dbqf9mkli
-API_KEY=645964416175881
-API_SECRET=bo9TRp8Qu9RGw08b51CL2pJP4-4
-```
 
 ---
 
