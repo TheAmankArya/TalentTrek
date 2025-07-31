@@ -12,7 +12,8 @@ dotenv.config({});
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:5173', // your frontend URL
+  // origin: 'http://localhost:5173', // your frontend URL
+  origin:'https://talenttrek.netlify.app',
   credentials: true
 }));
 
