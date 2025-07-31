@@ -1,7 +1,7 @@
 import React from 'react'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Button } from '../ui/button'
-import { Avatar, AvatarImage } from '../ui/avatar'
+import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar'
 import { LogOut, User2 } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -28,6 +28,9 @@ const Navbar = () => {
             toast.error(error.response.data.message);
         }
     }
+
+    const fallbackLetter = user?.fullname?.[0]?.toUpperCase() || 'U';
+
     return (
         <div className='bg-white'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
@@ -50,8 +53,6 @@ const Navbar = () => {
                                 </>
                             )
                         }
-
-
                     </ul>
                     {
                         !user ? (
@@ -63,14 +64,24 @@ const Navbar = () => {
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <Avatar className="cursor-pointer">
-                                        <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                        <AvatarImage
+                                            src={user?.profile?.profilePhoto}
+                                            alt={user?.fullname}
+                                            className="object-cover"
+                                        />
+                                        <AvatarFallback>{fallbackLetter}</AvatarFallback>
                                     </Avatar>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-80">
                                     <div className=''>
                                         <div className='flex gap-2 space-y-2'>
                                             <Avatar className="cursor-pointer">
-                                                <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                                <AvatarImage
+                                                    src={user?.profile?.profilePhoto}
+                                                    alt={user?.fullname}
+                                                    className="object-cover"
+                                                />
+                                                <AvatarFallback>{fallbackLetter}</AvatarFallback>
                                             </Avatar>
                                             <div>
                                                 <h4 className='font-medium'>{user?.fullname}</h4>
@@ -97,10 +108,8 @@ const Navbar = () => {
                             </Popover>
                         )
                     }
-
                 </div>
             </div>
-
         </div>
     )
 }
