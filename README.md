@@ -1,5 +1,5 @@
 # 🚀 TalentTrek – Smart Job Portal for the Modern Workforce
-
+Live Deployed Link : https://talenttrek.netlify.app
 Welcome to **TalentTrek**, a full-stack MERN-based job portal that bridges the gap between talented professionals and forward-thinking companies. Built with scalability, speed, and simplicity in mind, TalentTrek makes hiring and job-hunting seamless and efficient.
 
 ---
